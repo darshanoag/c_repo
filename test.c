@@ -1,7 +1,7 @@
 #include "stdio.h"
 #include "stdlib.h"
 
-// sample file 
+// sample file testing CodeQL
 
 void forward_null(void)
         {   
