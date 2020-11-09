@@ -45,7 +45,7 @@ void size_check(void)
                 p = malloc(sizeof(struct bigger_than_ptr *));
         }   
 
-int some_func(void);
+int some_func(void)
 {
         return 1;
 }
@@ -103,16 +103,16 @@ int paths() {
   if (!p)
     return NO_MEM;
 
-  if (!some_other_function()) {
+  if (1) {
     free(p);
     return OTHER_ERROR;
   }
 
-  if (!yet_another_function()) {
+  if (!1) {
     return OTHER_ERROR;
   }
 
-  do_some_things(p);
+  //do_some_things(p);
 
   free(p);
   return OK;
