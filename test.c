@@ -97,7 +97,7 @@ void overrun_static(void)
 #define OK 0
 #define OTHER_ERROR -2
 
-int paths() {
+int main() {
   char *p = malloc(12);
 
   if (!p)
