@@ -46,6 +46,9 @@ void size_check(void)
         }   
 
 int some_func(void);
+{
+        return 1;
+}
 
 void dead_code(void)
         {   
@@ -83,6 +86,7 @@ void uninit(void)
         }   
 
 void overrun_static(void)
+        {
                 char buf[10];
                 int i;
                 for (i = 0; i <= 10; i++)
