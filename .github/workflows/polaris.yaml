@@ -1,0 +1,41 @@
+name: Coverity Scan
+
+on:
+    workflow_dispatch:
+    push:
+        branches:
+            - test
+    pull_request:
+        branches:
+            - test
+
+jobs:
+    polaris-scan:
+      name: Polaris Coverity Static Analysis
+      permissions:
+        packages: write
+        pull-requests: write
+        contents: read
+        discussions: write
+      runs-on: ubuntu-22.04
+      steps:
+         - name: Checkout Source
+           uses: actions/checkout@v4
+
+         - name: Polaris PR Scan
+           uses: blackduck-inc/black-duck-security-scan@v2.0.0
+           with:
+            polaris_server_url: "https://poc.polaris.synopsys.com/"
+            polaris_access_token: "rvb1uibn0h59d9e6tnba154882h6b0v5ustk0sktqf04hdc4oo1uo97dk5050k6hjap8joj53fa68"
+            polaris_application_name: "darshan_2024"
+            polaris_project_name: "whisper"
+            polaris_assessment_types: "SAST"
+            polaris_prComment_enabled: true
+            polaris_waitForScan: true
+            coverity_build_command: gcc -c test.c
+            coverity_clean_command: rm -rf test.o
+            github_token: "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"
+            include_diagnostics: true
+            polaris_reports_sarif_create: true
+            polaris_upload_sarif_report: true
+            polaris_prComment_severities: "high,critical,medium,low"
