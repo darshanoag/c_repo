@@ -34,7 +34,7 @@ jobs:
             polaris_waitForScan: true
             coverity_build_command: gcc -c test.c
             coverity_clean_command: rm -rf test.o
-            github_token: "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"
+            github_token: "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"
             include_diagnostics: true
             polaris_reports_sarif_create: true
             polaris_upload_sarif_report: true
