@@ -3,18 +3,18 @@
 
 // sample file testing CodeQL
 
-void forward_null(void)
-        {   
-          char* p = 0;
-          *p = 'a';
-        }   
+//void forward_null(void)
+//        {   
+//          char* p = 0;
+//          *p = 'a';
+//        }   
 
-void reverse_null(char* input)
-    {   
-        *input = 12; 
-                if (input == NULL)
-                        return;
-    }   
+//void reverse_null(char* input)
+//    {   
+//        *input = 12; 
+//                if (input == NULL)
+//                        return;
+//    }   
 
 void resource_leak(void)
         {   
